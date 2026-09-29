@@ -1,6 +1,7 @@
 <?php
 include "db.php";
- 
+$dir = "http://localhost/assessment_beginner/";
+
 $clients = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS c FROM clients"))['c'];
 $services = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS c FROM services"))['c'];
 $bookings = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS c FROM bookings"))['c'];
@@ -13,8 +14,8 @@ $revenue = $revRow['s'];
 <head>
   <meta charset="utf-8">
   <title>Dashboard</title>
-  <link href="style.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="<?php echo $dir; ?>/style.css">  
 
 </head>
 <body>
@@ -24,6 +25,7 @@ $revenue = $revRow['s'];
 
   <!-- top kpis -->
   <div class="row justify-content-evenly">
+
     <!-- client kpi -->
     <div class="col-md-4">
       <div class="card">
@@ -40,6 +42,7 @@ $revenue = $revRow['s'];
         </div>
       </div>
     </div>
+
     <!-- services kpi -->
     <div class="col-md-4">
       <div class="card">

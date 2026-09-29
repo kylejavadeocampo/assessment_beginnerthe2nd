@@ -1,0 +1,19 @@
+#job {
+    background: white url("images/icon.png") repeat-x right;
+    background-size: 300px 300px;
+}
+
+#centerpls {
+    align-items: center;
+    background-color: aqua;
+    color: red;
+}
+
+#inputline {
+    max-width: 200px;
+}
+
+body {
+    background-image: url("images/violet1.png");
+    background-size: cover;
+}

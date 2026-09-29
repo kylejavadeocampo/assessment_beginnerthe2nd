@@ -1,5 +1,6 @@
 <?php
 include "../db.php";
+$dir = "http://localhost/assessment_beginner/";
  
 $id = $_GET['id'];
  
@@ -28,32 +29,46 @@ if (isset($_POST['update'])) {
 ?>
 <!doctype html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <title>Edit Client</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <head>
+      <meta charset="utf-8">
+      <title>Edit Client</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+      <link rel="stylesheet" href="<?php echo $dir; ?>/style.css">
+  </head>
 
-</head>
-<body>
-<?php include "../nav.php"; ?>
- 
-<h2>Edit Client</h2>
-<p style="color:red;"><?php echo $message; ?></p>
- 
-<form method="post">
-  <label>Full Name*</label><br>
-  <input type="text" name="full_name" value="<?php echo $client['full_name']; ?>"><br><br>
- 
-  <label>Email*</label><br>
-  <input type="text" name="email" value="<?php echo $client['email']; ?>"><br><br>
- 
-  <label>Phone</label><br>
-  <input type="text" name="phone" value="<?php echo $client['phone']; ?>"><br><br>
- 
-  <label>Address</label><br>
-  <input type="text" name="address" value="<?php echo $client['address']; ?>"><br><br>
- 
-  <button type="submit" name="update">Update</button>
-</form>
-</body>
+  <body>
+    <?php include "../nav.php"; ?>
+
+    <div class="container mt-5">
+      <div class="border border-3 rounded-1 p-4 mx-auto shadow bg-body" style="max-width: 420px">
+        <h2>Edit Client</h2>
+        <p style="color:red;"><?php echo $message; ?></p>
+
+        <form method="post">
+          <div>
+            <label>Full Name*</label> <br>
+            <input type="text" name="full_name" value="<?php echo $client['full_name']; ?>" class="form-control border-secondary">
+          </div>
+
+          <div class="mt-3">
+            <label>Email*</label> <br>
+            <input type="text" name="email" value="<?php echo $client['email']; ?>" class="form-control border-secondary">
+          </div>
+
+          <div class="mt-3">
+            <label>Phone</label> <br>
+            <input type="text" name="phone" value="<?php echo $client['phone']; ?>" class="form-control border-secondary">
+          </div>
+
+          <div class="mt-3">
+            <label>Address</label> <br>
+            <input type="text" name="address" value="<?php echo $client['address']; ?>" class="form-control border-secondary">
+          </div>
+
+          <button class="mt-3 btn btn-primary" type="submit" name="update">Update</button>
+          <a class="mt-3 btn btn-danger" href="clients_list.php">Cancel</a>
+        </form>
+      </div>
+    </div>
+  </body>
 </html>
