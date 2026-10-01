@@ -17,3 +17,13 @@ body {
     background-image: url("images/violet1.png");
     background-size: cover;
 }
+
+#table-card {
+    min-height: 400px;
+    overflow: hidden;
+}
+
+#table-card table {
+    width: 100%;
+    margin-bottom: 0;
+}
