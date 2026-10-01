@@ -9,6 +9,7 @@
         <li class="nav-item"><a class="nav-link active" href="/assessment_beginner/pages/bookings_list.php">Bookings</a></li>
         <li class="nav-item"><a class="nav-link active" href="/assessment_beginner/pages/tools_list.php">Tools</a></li>
         <li class="nav-item"><a class="nav-link active" href="/assessment_beginner/pages/payments_list.php">Payments</a></li>
+        <li class="nav-item"><a class="btn btn-danger" href="/assessment_beginner/login.php" onclick="return confirm('Are you sure you want to logout?')"><i class="bi bi-indent"></i></a></li>
       </ul>
     </div>
   <div>

@@ -15,6 +15,7 @@ $revenue = $revRow['s'];
   <meta charset="utf-8">
   <title>Dashboard</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="<?php echo $dir; ?>/style.css">  
 
 </head>
@@ -36,7 +37,7 @@ $revenue = $revRow['s'];
               <p class="card-text fst-italic text-muted" style="">total clients at this very moment</p>
             </div>
             <div class="col-md-6 d-flex justify-content-center align-items-center">
-              <h5 class="card-title"><?php echo $clients; ?></h5>
+              <h3 class="card-title"><?php echo $clients; ?></h3>
             </div>
           </div>
         </div>
@@ -53,7 +54,7 @@ $revenue = $revRow['s'];
               <p class="card-text fst-italic text-muted" style="">total services at this very moment</p>
             </div>
             <div class="col-md-6 d-flex justify-content-center align-items-center">
-              <h5 class="card-title"><?php echo $services; ?></h5>
+              <h3 class="card-title"><?php echo $services; ?></h3>
             </div>
           </div>
         </div>
@@ -73,7 +74,7 @@ $revenue = $revRow['s'];
               <p class="card-text fst-italic text-muted" style="">total bookings at this very moment</p>
             </div>
             <div class="col-md-6 d-flex justify-content-center align-items-center">
-              <h5 class="card-title"><?php echo $bookings; ?></h5>
+              <h3 class="card-title"><?php echo $bookings; ?></h3>
             </div>
           </div>
         </div>
@@ -89,7 +90,7 @@ $revenue = $revRow['s'];
               <p class="card-text fst-italic text-muted" style="">total Revenue at this very moment</p>
             </div>
             <div class="col-md-6 d-flex justify-content-center align-items-center">
-              <h5 class="card-title"><?php echo $revenue; ?></h5>
+              <h3 class="card-title"><?php echo $revenue; ?></h3>
             </div>
           </div>
         </div>
