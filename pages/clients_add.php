@@ -27,6 +27,7 @@ if (isset($_POST['save'])) {
       <meta charset="utf-8">
       <title>Add Client</title>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
       <link rel="stylesheet" href="<?php echo $dir; ?>/style.css">  
 
   </head>
@@ -57,7 +58,7 @@ if (isset($_POST['save'])) {
           
           <div class="mt-3">
             <label>Address</label> <br>
-            <input type="text" name="address" class="form-control border-secondary">
+            <input type="text" name="address" class="form-control border-secondary" maxlength="11" >
           </div>
           
           <button class="mt-3 btn btn-primary" type="submit" name="save">Save</button>

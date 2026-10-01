@@ -1,5 +1,6 @@
 <?php
 include "../db.php";
+$dir = "http://localhost/assessment_beginner/";
  
 $clients = mysqli_query($conn, "SELECT * FROM clients ORDER BY full_name ASC");
 $services = mysqli_query($conn, "SELECT * FROM services WHERE is_active=1 ORDER BY service_name ASC");
@@ -25,40 +26,54 @@ if (isset($_POST['create'])) {
 ?>
 <!doctype html>
 <html>
-<head>
-    <meta charset="utf-8">
+  <head>
+      <meta charset="utf-8">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+      <link rel="stylesheet" href="<?php echo $dir; ?>/style.css">
+      
+      <title>Create Booking</title>
+  </head>
+  <body>
+    <?php include "../nav.php"; ?>
     
-    <title>Create Booking</title>
-</head>
-<body>
-<?php include "../nav.php"; ?>
- 
-<h2>Create Booking</h2>
- 
-<form method="post">
-  <label>Client</label><br>
-  <select name="client_id">
-    <?php while($c = mysqli_fetch_assoc($clients)) { ?>
-      <option value="<?php echo $c['client_id']; ?>"><?php echo $c['full_name']; ?></option>
-    <?php } ?>
-  </select><br><br>
- 
-  <label>Service</label><br>
-  <select name="service_id">
-    <?php while($s = mysqli_fetch_assoc($services)) { ?>
-      <option value="<?php echo $s['service_id']; ?>">
-        <?php echo $s['service_name']; ?> (₱<?php echo number_format($s['hourly_rate'],2); ?>/hr)
-      </option>
-    <?php } ?>
-  </select><br><br>
- 
-  <label>Date</label><br>
-  <input type="date" name="booking_date"><br><br>
- 
-  <label>Hours</label><br>
-  <input type="number" name="hours" min="1" value="1"><br><br>
- 
-  <button type="submit" name="create">Create Booking</button>
-</form>
-</body>
+    <div class="container mt-5">
+      <div class="border border-3 rounded-1 p-4 mx-auto shadow bg-body" style="max-width: 420px">
+        <h2>Create Booking</h2>
+
+        <form method="post">
+          <label>Client</label><br>
+
+          <!-- client -->
+          <select class="form-select border-secondary" name="client_id">
+            <?php while($c = mysqli_fetch_assoc($clients)) { ?>
+              <option value="<?php echo $c['client_id']; ?>"><?php echo $c['full_name']; ?></option>
+            <?php } ?>
+          </select><br><br>
+        
+          <label>Service</label><br>
+          <select class="form-select border-secondary" name="service_id">
+            <?php while($s = mysqli_fetch_assoc($services)) { ?>
+              <option value="<?php echo $s['service_id']; ?>">
+                <?php echo $s['service_name']; ?> (₱<?php echo number_format($s['hourly_rate'],2); ?>/hr)
+              </option>
+            <?php } ?>
+          </select><br><br>
+        
+          <label>Date</label><br>
+          <input class="form-control" type="date" name="booking_date"><br><br>
+        
+          <label>Hours</label><br>
+          <input class="form-control" type="number" name="hours" min="1" value="1"><br><br>
+        
+          <button class="btn btn-primary" type="submit" name="create">Create Booking</button>
+          <a class="btn btn-danger" href="bookings_list.php">Cancel</a>
+        </form>
+      </div>
+    </div>
+
+    
+    
+    
+  </body>
 </html>
